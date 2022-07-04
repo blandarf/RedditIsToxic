@@ -19,8 +19,8 @@ def home():
             flash('Do not include r/ in the name. Just type the name as it is', category='error')
         elif(len(subr) < 1) or (len(nbr) < 1):
             flash('Do not keep the subreddit name field or the number of posts field empty.', category='error')
-        elif(int(nbr) > 10):
-            flash('Do not put a number greater than 10.', category='error')
+        elif(int(nbr) > 4):
+            flash('Do not put a number greater than 4.', category='error')
         else:
             scraping(subr, nbr)
             flash('Results fetched! Go to the results tab.', category='success')
