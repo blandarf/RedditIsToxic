@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash
-from IPython.display import HTML
+
 global hshtml
 
 hshtml = '''<h1>No results yet...</h1>'''
