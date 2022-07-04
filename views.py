@@ -83,7 +83,7 @@ def scraping(subr,nbr):
     toxic_comments.to_csv(iid, index=False)
     pdfer = pd.read_csv(iid, index_col=False)
     name = iid +"_comments.html"
-    pdf = pdfer.to_html("/home/blandarf/Documents/WebAppAttempt/website/templates/"+name)
+    pdf = pdfer.to_html(name)
 @views.route('/results')
 def results():
     
