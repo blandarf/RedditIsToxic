@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, flash
+from IPython.display import HTML
 global hshtml
 
 hshtml = '''<h1>No results yet...</h1>'''
@@ -78,15 +79,10 @@ def scraping(subr,nbr):
     print(toxic_comments)
     end = time.time()
     print("Time spent scraping: ", round(end - start, 2), " s")
-
-
-    iid = subr
-
-    toxic_comments.to_csv(iid, index=False)
-    pdfer = pd.read_csv(iid, index_col=False)
-    name = iid +"_comments.html"
+    global hshtml
+    hshtml = toxic_comments.to_html()
+    print(hshtml)
     
-    hshtml = str(pdfer.to_html("templates/"+name))
 @views.route('/results')
 def results():
     
