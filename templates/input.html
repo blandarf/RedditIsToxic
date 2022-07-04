@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %}Toxicity Analyzer{% endblock %} {% block
+    content %}
+    <form method="POST">
+      <h3 align="center">Toxicity Analyzer</h3>
+      <div class="form-group">
+        <label for="subreddit">Subreddit To Analyze</label>
+        <input
+          type="text"
+          class="form-control"
+          id="subreddit"
+          name="subreddit"
+          placeholder="Enter subreddit"
+        />
+      </div>
+      <div class="form-group">
+        <label for="numberOfPosts">Number of Posts To Analyze</label>
+        <input
+          type="text"
+          class="form-control"
+          id="numberOfPosts"
+          name="numberOfPosts"
+          placeholder="Enter number (<= 10)"
+        />
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% endblock %}
