@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template, request, flash
+global hshtml
 
+hshtml = '''<h1>No results yet...</h1>'''
 
 x = ''
 
@@ -83,7 +85,7 @@ def scraping(subr,nbr):
     toxic_comments.to_csv(iid, index=False)
     pdfer = pd.read_csv(iid, index_col=False)
     name = iid +"_comments.html"
-    global hshtml
+    
     hshtml = str(pdfer.to_html("templates/"+name))
 @views.route('/results')
 def results():
