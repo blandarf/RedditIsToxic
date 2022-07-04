@@ -53,7 +53,7 @@ def scraping(subr,nbr):
             if isinstance(top_level_comment, praw.models.MoreComments):
                 continue
             if(i > 0):
-                tox = Detoxify('original').predict(top_level_comment.body)
+                tox = Detoxify('original-small').predict(top_level_comment.body)
                 print("++Comment Number ", i,"analyzed!")
                 cdict["Post Title"].append(post.title)
                 cdict["Post ID"].append(post.id)
