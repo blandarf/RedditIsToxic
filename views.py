@@ -83,9 +83,10 @@ def scraping(subr,nbr):
     toxic_comments.to_csv(iid, index=False)
     pdfer = pd.read_csv(iid, index_col=False)
     name = iid +"_comments.html"
-    pdfer.to_html("templates/"+name)
+    global hshtml
+    hshtml = str(pdfer.to_html("templates/"+name))
 @views.route('/results')
 def results():
     
     name = x+'_comments.html'
-    return render_template(name)
+    return hshtml
