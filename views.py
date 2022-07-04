@@ -64,7 +64,7 @@ def scraping(subr,nbr):
                 cdict["Toxicity"].append(str(round(tox["toxicity"]*100, 2))+"%")
                 cdict["Insult"].append(str(round(tox["insult"]*100, 2))+"%")
             i += 1
-            if(i > 10):
+            if(i > 5):
                 break
         if( post.score > max):
             max = post.score
