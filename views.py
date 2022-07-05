@@ -37,7 +37,7 @@ def scraping(subr,nbr):
 
     rro = praw.Reddit(client_id=config('CLIENT_ID'), client_secret=config('CLIENT_SEC'), user_agent=config('USER_AGENT'))
     sub = str(subr)
-    #keyword = input("What keyword do you want to look up?\n")
+    
     nb = int(nbr)
     start = time.time()
     subreddit = rro.subreddit(sub)
@@ -46,7 +46,7 @@ def scraping(subr,nbr):
     max = 0
 
     posts = subreddit.hot(limit=nb)
-    #pdict = {"Post Title":[], "Post Text":[], "Upvotes":[], "Comments":[], "URL":[], "Toxicity":[], "Insult":[]}
+    
     cdict = {"Post Title":[], "Post ID":[],"Comment":[], "Toxicity":[], "Insult":[]}
     for post in posts:
 
